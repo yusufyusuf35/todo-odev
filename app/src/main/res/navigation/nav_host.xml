@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_host"
+    app:startDestination="@id/yapilacaklarListesi">
+
+    <fragment
+        android:id="@+id/yapilacaklarKaydet"
+        android:name="com.deliysuf.kisilerodev.ui.fragment.YapilacaklarKaydet"
+        android:label="YapilacaklarKaydet" />
+    <fragment
+        android:id="@+id/yapilacaklarListesi"
+        android:name="com.deliysuf.kisilerodev.ui.fragment.YapilacaklarListesi"
+        android:label="YapilacaklarListesi" >
+        <action
+            android:id="@+id/toYapilacaklariKaydet"
+            app:destination="@id/yapilacaklarKaydet" />
+        <action
+            android:id="@+id/toyapilacaklariGuncelle"
+            app:destination="@id/yapilacaklarGuncelle" />
+    </fragment>
+    <fragment
+        android:id="@+id/yapilacaklarGuncelle"
+        android:name="com.deliysuf.kisilerodev.ui.fragment.YapilacaklarGuncelle"
+        android:label="YapilacaklarGuncelle" >
+        <argument
+            android:name="yapilacak"
+            app:argType="com.deliysuf.kisilerodev.data.entity.Yapilacak" />
+    </fragment>
+</navigation>
